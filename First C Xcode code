@@ -1,0 +1,46 @@
+//
+//  test.c
+//  New life
+//
+//  Created by 吴昊森 on 2018/11/22.
+//  Copyright © 2018年 吴昊森. All rights reserved.
+//
+
+#include"test.h"
+#include<limits.h>
+#include<float.h>
+int main(void)
+{
+    int a[4]={1,2,3,4},Thousand_integer = 0, hurhand_integer = 0, Ten_integer = 0;
+    int interger = 0,counts = 0;
+    
+    for(int i=0;i<4;i++)
+    {
+        Thousand_integer = a[i]*1000;
+        for(int j=0;j<4;j++)
+        {
+            if(a[i]!=a[j])
+            {
+                hurhand_integer = a[j]*100;
+                for(int k=0;k<4;k++)
+                {
+                    if(a[k]!=a[i]&&a[k]!=a[j])
+                    {
+                        Ten_integer = a[k]*10;
+                        for(int m=0;m<4;m++)
+                        {
+                            if(a[m]!=a[i]&&a[m]!=a[j]&&a[m]!=a[k])
+                            {
+                                interger = a[m];
+                                int sum = Thousand_integer+hurhand_integer+Ten_integer+interger;
+                                printf("%d  ",sum);
+                                ++counts;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+printf("\ncounts=%d\n",counts);
+}
