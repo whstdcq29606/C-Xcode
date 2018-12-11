@@ -12,3 +12,16 @@ int main(void){
     printf("%d      %d      %d\n",*p1,*p2,*p3);
     return 0;
 }
+ //Then we will get this result:
+ p1      p2      p3
+100      100      300
+100      100      300
+200      101      400
+
+"*p1++" means that first thing the complier to do is printing the value of p1, then p1 will add an address that point to a[1]:100;
+"++*p1" first thing: update the p1 and p1 point to a[1], then print it's value a[1]=200;
+"(*p)++" and "*(p++) has the same role as "*p1++";
+"*(++p)" has the same role sa "++*p";
+Please have a concerned view to "*(p++), it isn't add p1's pointed address firstly but printf the value b[0], then add address which is
+represent b[1];
+
